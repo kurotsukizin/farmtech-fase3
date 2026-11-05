@@ -1,0 +1,20 @@
+FARMTECH NEXO - TRATAMENTO DE DADOS
+
+Registros recebidos: 645
+Registros rejeitados: 0
+Registros tratados: 645
+Inicio: 2026-01-01 00:00:00
+Ultima leitura: 2026-01-27 20:00:00
+Intervalos diferentes de 1 hora: 0
+Leituras com bomba ligada: 271
+Percentual de leituras com bomba ligada: 42.02%
+Horas de bomba simuladas: 271
+Divergencias na regra da bomba: 0
+
+Observacoes:
+- O arquivo bruto nao foi alterado.
+- Nao foram criadas leituras sinteticas.
+- Nao houve preenchimento automatico de lacunas.
+- pH e umidade do solo sao representacoes didaticas.
+- Horas simuladas nao equivalem a horas reais.
+- Dias inicial e final podem ter coleta parcial.
