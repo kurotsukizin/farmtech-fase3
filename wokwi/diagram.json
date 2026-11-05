@@ -1,0 +1,104 @@
+{
+  "version": 1,
+  "author": "FarmTech Solutions",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-esp32-devkit-c-v4",
+      "id": "esp",
+      "top": 0,
+      "left": 0,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht1",
+      "top": -150,
+      "left": 150,
+      "attrs": {
+        "temperature": "25.6",
+        "humidity": "75"
+      }
+    },
+    {
+      "type": "wokwi-photoresistor-sensor",
+      "id": "ldr1",
+      "top": -150,
+      "left": 350,
+      "attrs": {
+        "lux": "500"
+      }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn_n",
+      "top": 150,
+      "left": 350,
+      "attrs": {
+        "color": "green",
+        "xray": "1",
+        "bounce": "1",
+        "label": "N"
+      }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn_p",
+      "top": 250,
+      "left": 350,
+      "attrs": {
+        "color": "green",
+        "xray": "1",
+        "bounce": "1",
+        "label": "P"
+      }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn_k",
+      "top": 350,
+      "left": 350,
+      "attrs": {
+        "color": "green",
+        "xray": "1",
+        "bounce": "1",
+        "label": "K"
+      }
+    },
+    {
+      "type": "wokwi-relay-module",
+      "id": "relay1",
+      "top": 150,
+      "left": 550,
+      "attrs": {}
+    }
+  ],
+  "connections": [
+    ["dht1:VCC", "esp:3V3", "red", []],
+    ["dht1:GND", "esp:GND.1", "black", []],
+    ["dht1:SDA", "esp:4", "blue", []],
+
+    ["ldr1:VCC", "esp:3V3", "red", []],
+    ["ldr1:GND", "esp:GND.1", "black", []],
+    ["ldr1:AO", "esp:34", "orange", []],
+
+    ["btn_n:1.r", "esp:14", "green", []],
+    ["btn_n:2.r", "esp:GND.1", "black", []],
+
+    ["btn_p:1.r", "esp:27", "green", []],
+    ["btn_p:2.r", "esp:GND.1", "black", []],
+
+    ["btn_k:1.r", "esp:26", "green", []],
+    ["btn_k:2.r", "esp:GND.1", "black", []],
+
+    ["relay1:VCC", "esp:5V", "red", []],
+    ["relay1:GND", "esp:GND.1", "black", []],
+    ["relay1:IN", "esp:25", "purple", []],
+
+    ["esp:TX0", "$serialMonitor:RX", "", []],
+    ["esp:RX0", "$serialMonitor:TX", "", []]
+  ],
+  "serialMonitor": {
+    "display": "terminal"
+  }
+}
